@@ -3,17 +3,20 @@ import {
   PrimaryGeneratedColumn,
   Column,
   JoinColumn,
-  ManyToOne,
+  ManyToOne, BaseEntity,
 } from "typeorm";
 import { Quartier } from "./Quartier";
 
 @Entity()
-export class User {
+export class User extends BaseEntity{
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   nom: string;
+
+  @Column()
+  email: string;
 
   @Column()
   prenom: string;

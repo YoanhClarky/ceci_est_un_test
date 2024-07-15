@@ -51,3 +51,11 @@ export const deleteArrondissementController = async (
   const deleteArron = await deleteArrondissementService(id);
   res.json(deleteArron);
 };
+
+
+export class ArrondissementController {
+
+   static create = async(req, res)=>{
+      
+   }
+} 

@@ -1,12 +1,15 @@
-import { Router } from "express";
+import {Router} from "express";
 import {
-  CreateUserController,
-  deleteUserController,
-  getAllUsersController,
-  showUserController,
-  updateUserController,
-  UsersQuartierController,
+    CreateUserController,
+    deleteUserController,
+    getAllUsersController,
+    showUserController,
+    updateUserController,
+    UsersQuartierController,
 } from "../controllers/UsersControllers";
+import {validateBody} from "../middlewares/validateBody";
+import {CreateUserDto} from "../dtos/create-user.dto";
+import UserController from "../controllers/UserController";
 
 const UsersRoutes = Router();
 
@@ -16,4 +19,8 @@ UsersRoutes.post("/", CreateUserController);
 UsersRoutes.put("/", updateUserController);
 UsersRoutes.delete("/", deleteUserController);
 UsersRoutes.get("/quartier/:quartier_id", UsersQuartierController);
+
+// Route ajoutées
+UsersRoutes.post('/create', validateBody(CreateUserDto), UserController.create)
+
 export default UsersRoutes;

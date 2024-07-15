@@ -8,7 +8,7 @@ import {
 
 const ArrondissementsRoutes = Router();
 
-ArrondissementsRoutes.get("/", getAllArrondissementController);
+ArrondissementsRoutes.get("/create", getAllArrondissementController);
 ArrondissementsRoutes.post("/", createArrondissementController);
 ArrondissementsRoutes.put("/", updateArrondissementController);
 ArrondissementsRoutes.delete("/", deleteArrondissementController);

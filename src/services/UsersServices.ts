@@ -9,12 +9,14 @@ export const getAllUsersService = async () => {
   const users = await UserModelRepository.find();
   return users;
 };
+
 interface createUserDto {
   nom: string;
   prenom: string;
   age: number;
   quartier_id: number;
 }
+
 export const createUserService = async (user: createUserDto): Promise<User> => {
   const { nom, prenom, age, quartier_id } = user;
   const quartier = await QuartierModelRepository.findOne({
